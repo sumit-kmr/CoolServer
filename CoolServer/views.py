@@ -36,11 +36,11 @@ def auto(request):
     return JsonResponse({'article':page('Auto')})
 
 def tech(request):
-    return JsonResponse({'article':page('tech')})
+    return JsonResponse({'article':page('Tech')})
 
 def sport(request):
     return JsonResponse({'article':page('Sport')})
 
 def world(request):
-    return JsonResponse({'article':page('world')})
+    return JsonResponse({'article':page('World')})
 
