@@ -80,7 +80,7 @@ def main(key):
     print(time.clock() - t0)
     #print(len(res))
     
-    with open(key+'.json', 'w', encoding="utf-8") as f:
+    with open('/home/ubuntu/django/news-scrapper-django-server/CoolServer/Backend_Script/'+key+'.json', 'w', encoding="utf-8") as f:
         json.dump(res,f,indent=2, sort_keys=True)
     
 if __name__ == "__main__":

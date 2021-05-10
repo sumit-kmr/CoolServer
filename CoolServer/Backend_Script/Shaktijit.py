@@ -1,13 +1,14 @@
 import feedparser
 import requests, re
 import datetime
+from dateutil.tz import gettz
 import time
 class Shaktijit:
     def __init__(self):
         self.rss={
 "Tech":["https://www.cnet.com/rss/all/","https://www.theverge.com/rss/index.xml","http://feeds.feedburner.com/digit/latest-from-digit"]
              }
-        self.x=datetime.datetime.now()
+        self.x=datetime.datetime.now(tz=gettz('Asia/Kolkata'))
         self.day = self.x.strftime("%a, %d %b")
 
     def get_data(self,key):

@@ -1,6 +1,7 @@
 import feedparser
 import requests, re
 import datetime
+from dateutil.tz import gettz
 import time
 class Shaunak:
     def __init__(self):
@@ -15,7 +16,7 @@ class Shaunak:
 "Tech":["https://timesofindia.indiatimes.com/rssfeeds/66949542.cms","http://feeds.bbci.co.uk/news/technology/rss.xml","https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml"],
 "Sport":["https://timesofindia.indiatimes.com/rssfeeds/4719148.cms","https://www.thehindu.com/sport/feeder/default.rss","https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml"]
              }
-        self.x=datetime.datetime.now()
+        self.x=datetime.datetime.now(tz=gettz('Asia/Kolkata'))
         self.day = self.x.strftime("%a, %d %b")
 
     def get_data(self,key):

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,12 +27,9 @@ DEBUG = False
 
 CORS_ALLOW_ALL_ORIGINS=True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','http://localhost:3000',]
+ALLOWED_HOSTS = ["*",]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
+CORS_ALLOWED_ORIGINS = ["http://ec2-18-224-95-122.us-east-2.compute.amazonaws.com",]
 
 
 # Application definition
@@ -132,3 +129,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")

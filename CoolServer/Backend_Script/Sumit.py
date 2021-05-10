@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import datetime
+from dateutil.tz import gettz
 import time
 class Sumit:
         def __init__(self):
@@ -13,7 +14,7 @@ class Sumit:
                 "Ent": ['https://feeds.feedburner.com/ndtvmovies-latest', 'https://indianexpress.com/section/india/education/feed','https://indianexpress.com/section/entertainment/feed','https://economictimes.indiatimes.com/industry/media/entertainment/rssfeeds/13357212.cms'],
                 "Trending": ['https://feeds.feedburner.com/ndtvnews-trending-news', 'https://www.livemint.com/rss/news']
                 }
-                self.x=datetime.datetime.now()
+                self.x=datetime.datetime.now(tz=gettz('Asia/Kolkata'))
                 self.day = self.x.strftime("%a, %d %b")
 
         def get_data(self, key):
